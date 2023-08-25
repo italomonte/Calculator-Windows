@@ -1,6 +1,7 @@
 import tkinter as tk
 import math as mt
 
+# global variable to know if old value is a result or just a random number
 result = False
 
 def clear_text(display):
@@ -29,7 +30,6 @@ def set_text(txt, display):
         display.config(text=newtext)
         result = False
     
-
 def square(display):
     global result
     value = eval(display.cget("text"))
