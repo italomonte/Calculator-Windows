@@ -1,8 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from operacoes import set_text, square, clear_text
-
-
+from operacoes import set_text, square, clear_text, delete, inverse
 
 
 # Criar raiz
@@ -40,10 +38,10 @@ button2.grid(row=0, column=1, pady=(2, 2), padx=(2,2))
 button3 = tk.Button(button_frame, text="C", **button_style, command=lambda: clear_text(display))
 button3.grid(row=0, column=2, pady=(2, 2), padx=(2,2))
 
-button4 = tk.Button(button_frame, text="<-", **button_style)
+button4 = tk.Button(button_frame, text="<-", **button_style, command=lambda: delete(display))
 button4.grid(row=0, column=3, pady=(2, 2), padx=(2,2))
 
-button5 = tk.Button(button_frame, text="1/x", **button_style)
+button5 = tk.Button(button_frame, text="1/x", **button_style, command=lambda: inverse(display))
 button5.grid(row=1, column=0, pady=(2, 2), padx=(4,2))
 
 button6 = tk.Button(button_frame, text="x²", **button_style, command=lambda: square(display))
@@ -97,7 +95,7 @@ button21.grid(row=5, column=0, pady=(2, 2), padx=(4,2))
 button22 = tk.Button(button_frame, text="0", **button_style, command=lambda: set_text("0", display))
 button22.grid(row=5, column=1, pady=(2, 2), padx=(2,2))
 
-button23 = tk.Button(button_frame, text=",", **button_style, command=lambda: set_text(",", display))
+button23 = tk.Button(button_frame, text=".", **button_style, command=lambda: set_text(",", display))
 button23.grid(row=5, column=2, pady=(2, 2), padx=(2,2))
 
 button24 = tk.Button(button_frame, text="=", relief="flat", width=10, height=3, bg="#107db2", fg="white")
