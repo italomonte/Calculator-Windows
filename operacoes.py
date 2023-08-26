@@ -62,22 +62,24 @@ def make_operation(display):
     global operator
 
     if operator == "+":
-        newvalue = str(round(operanting[0] + operanting[1], 15))
-        display.config(text=newvalue)
+        newvalue = str(round(operanting[0] + operanting[1], 14))
+        set_text(newvalue, display)
     elif operator == '-':
-        newvalue = str(round(operanting[0] - operanting[1], 15))
-        display.config(text=newvalue)
+        newvalue = str(round(operanting[0] - operanting[1], 14))
+        set_text(newvalue, display)
+
     elif operator == 'X':
-        newvalue = str(round(operanting[0] * operanting[1], 15))
-        display.config(text=newvalue)
+        newvalue = str(round(operanting[0] * operanting[1], 14))
+        set_text(newvalue, display)
+
     elif operator == '/':
-        newvalue = str(round(operanting[0] / operanting[1], 15))
-        display.config(text=newvalue)
+        newvalue = str(round(operanting[0] / operanting[1], 14))
+        set_text(newvalue, display)
 
 def square(display):
     global result
     value = eval(display.cget("text"))
-    newvalue = round((mt.pow(value, 2)), 15)
+    newvalue = round((mt.pow(value, 2)), 14)
     display.config(text=str(newvalue))
     result = True
 
@@ -85,13 +87,13 @@ def inverse(display):
 
     global result
     previoustext = display.cget("text")
-    newvalue = round(1/eval(previoustext), 15)
+    newvalue = round(1/eval(previoustext), 14)
     display.config(text=str(newvalue))
     result = True
 
 def squareroot(display):
     global result
     previoustext = display.cget("text")
-    newvalue = round(mt.sqrt(eval(previoustext)), 15)
+    newvalue = round(mt.sqrt(eval(previoustext)), 14)
     display.config(text=str(newvalue))
     result=True
