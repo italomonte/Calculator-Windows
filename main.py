@@ -95,7 +95,7 @@ button21.grid(row=5, column=0, pady=(2, 2), padx=(4,2))
 button22 = tk.Button(button_frame, text="0", **button_style, command=lambda: set_text("0", display))
 button22.grid(row=5, column=1, pady=(2, 2), padx=(2,2))
 
-button23 = tk.Button(button_frame, text=".", **button_style, command=lambda: set_text(",", display))
+button23 = tk.Button(button_frame, text=".", **button_style, command=lambda: set_text(".", display))
 button23.grid(row=5, column=2, pady=(2, 2), padx=(2,2))
 
 button24 = tk.Button(button_frame, text="=", relief="flat", width=10, height=3, bg="#107db2", fg="white", command=lambda: igual(display))

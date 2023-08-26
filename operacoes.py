@@ -59,23 +59,23 @@ def igual(display):
     make_operation(display)
 
 def make_operation(display):
-    global operator
-
+    global operator, result
     if operator == "+":
         newvalue = str(round(operanting[0] + operanting[1], 14))
         set_text(newvalue, display)
+        result = True
     elif operator == '-':
         newvalue = str(round(operanting[0] - operanting[1], 14))
         set_text(newvalue, display)
-
+        result = True
     elif operator == 'X':
         newvalue = str(round(operanting[0] * operanting[1], 14))
         set_text(newvalue, display)
-
+        result = True
     elif operator == '/':
         newvalue = str(round(operanting[0] / operanting[1], 14))
         set_text(newvalue, display)
-
+        result = True
 def square(display):
     global result
     value = eval(display.cget("text"))
