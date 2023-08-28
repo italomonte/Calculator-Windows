@@ -36,27 +36,28 @@ def set_text(txt, display):
         display.config(text=newtext)
         result = False
 
-def set_number(display):
+def set_number(number):
     global operanting, result
-    number = eval(display.cget("text"))
 
     if len(operanting) == 2:
         operanting[0] = operanting[1]
         operanting.pop()
         operanting.append(number)
+        print("\n", operanting)
         result = True
     else:
         operanting.append(number)
+        print("\n", operanting)
+
         result = True
 
-def symbol(symbol, display):
-    global operator
-    set_number(display)
+def symbol(symbol, display, expr):
+    global operator, oper
+    num = eval(display.cget("text"))
+    set_number(num)
     operator=symbol
-
-def igual(display):
-    set_number(display)
-    make_operation(display)
+    print("\n", operator)
+    expression(symbol, expr)
 
 def make_operation(display):
     global operator, result
@@ -68,7 +69,7 @@ def make_operation(display):
         newvalue = str(round(operanting[0] - operanting[1], 14))
         set_text(newvalue, display)
         result = True
-    elif operator == 'X':
+    elif operator == 'x':
         newvalue = str(round(operanting[0] * operanting[1], 14))
         set_text(newvalue, display)
         result = True
@@ -76,6 +77,7 @@ def make_operation(display):
         newvalue = str(round(operanting[0] / operanting[1], 14))
         set_text(newvalue, display)
         result = True
+
 def square(display):
     global result
     value = eval(display.cget("text"))
@@ -92,8 +94,34 @@ def inverse(display):
     result = True
 
 def squareroot(display):
+
     global result
     previoustext = display.cget("text")
     newvalue = round(mt.sqrt(eval(previoustext)), 14)
     display.config(text=str(newvalue))
     result=True
+
+def porcent(display):
+
+    global result
+    previousvalue = eval(display.cget("text"))
+    newvalue = round(0.01 * previousvalue, 14)
+    display.config(text = str(newvalue))
+    result=True
+
+def expression(symbol, display):
+    global operator
+    t = len(operanting)
+    n1 = operanting[0]
+    if t == 1:
+        phrase = (' {} {} '.format(n1, symbol))
+    else:   
+        n2 = operanting[1]
+        phrase = ('{} {} {} = '.format(n1, operator, n2))
+    display.config(text = phrase)
+    
+def igual(display, expr):
+    num = eval(display.cget("text"))
+    set_number(num)
+    make_operation(display)
+    expression("=", expr)
