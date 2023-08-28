@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+import keyboard
 from operacoes import set_text, square, clear_text, delete, inverse, squareroot, symbol, igual, porcent
 
 
@@ -23,13 +24,54 @@ button_frame.grid(row=1, column=0)
 # TEXT[
 
 # expression 
-expression = tk.Label(display_frame, text="a", height=0, width=34, font=("Segoe", 12), justify="left" ,anchor="ne", bg="green", fg="black")
+expression = tk.Label(display_frame, text="", height=0, width=34, font=("Segoe", 12), justify="left" ,anchor="ne", fg="black")
 expression.grid(row=0, column=0)
 # new number 
-display = tk.Label(display_frame, text="", height=3, width=16, font=("Segoe", 24), justify="left", anchor="se",bg="blue")
+display = tk.Label(display_frame, text="", height=3, width=16, font=("Segoe", 24), justify="left", anchor="se")
 display.grid(row=1, column=0)
 
 # BUTTONS
+def on_key_press(event):
+    if event.keysym == "1":
+        set_text("1", display)
+    if event.keysym == "2":
+        set_text("2", display)
+    if event.keysym == "3":
+        set_text("3", display)
+    if event.keysym == "4":
+        set_text("4", display)
+    if event.keysym == "5":
+        set_text("5", display)
+    if event.keysym == "6":
+        set_text("6", display)
+    if event.keysym == "7":
+        set_text("7", display)
+    if event.keysym == "8":
+        set_text("8", display)
+    if event.keysym == "9":
+        set_text("9", display)
+    if event.char == "+":
+        symbol("+", display, expression)
+    if event.char == "-":
+        symbol("-", display, expression)
+    if event.char == "*":
+        symbol("*", display, expression)
+    if event.char == "/":
+        symbol("/", display, expression)
+    if event.char == "%":
+        porcent(display)
+    if event.keysym == "c":
+        clear_text(display)
+    if event.char in ("BackSpace", "Delete"):
+        delete(display)
+    if event.keysym in ("Return", "="):
+        igual(display, expression)
+    
+
+
+
+root.bind("<KeyPress>", on_key_press)  # Associa a função on_key_press ao evento de tecla pressionada
+
 
 # Configuração dos botões para remover sombreado e foco
 button_style = {"relief":"flat", "width":10, "height":3, "bg":"#dcdcdc"}
