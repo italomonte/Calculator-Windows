@@ -1,4 +1,4 @@
-# calculator with a framework python tkinter
+# Calculadora com Tkinter
 Neste projeto eu decidi me desafiar e tentar criar uma calculadora do zero com as mesmas funcionalidades da contida no Windows 10. Passei por alguns desafios envolvendo a parte gráfica e alguns obstáculos na sintaxe para que tudo funcionasse de forma flúida e correta.
 
 No desenvolvimento utilizei a biblioteca Tkinter, podendo obsorver muito conhecimento da mesma, explorando quase todas suas funcionalidades.
