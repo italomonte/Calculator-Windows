@@ -1,9 +1,14 @@
-# Calculadora com Tkinter
+## Calculadora com Tkinter
 Neste projeto resolvi me desafiar e tentar criar uma calculadora do zero com as mesmas funcionalidades daquela contida no Windows 10. Passei por alguns desafios envolvendo a parte gráfica e alguns obstáculos na sintaxe para que tudo funcionasse perfeitamente.
 
+## 💻 Tecnologias Usadas
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+
+## Descrição 
 No desenvolvimento utilizei a biblioteca Tkinter,explorando quase todas as suas funcionalidades.
 
-Alguns dos recursos:
+Alguns dos recursos da calculadora:
 Adicionar, subtrair, multiplicar, dividir, porcentagem, raiz quadrada, quadrado, etc.
 
 Aqui estão algumas capturas de tela da calculadora em ação:
